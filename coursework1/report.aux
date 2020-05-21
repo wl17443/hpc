@@ -1,0 +1,15 @@
+# P2P Communication
+- One process sends a message and another process receives it 
+- proccess may have many messages waiting to be received 
+- how does MPI and receiving process dtermine what message to receive 
+- does send and receive routines initiate communication operations and return immediately, or wait for the initiated communication operation to complete before returning 
+- in general, source and destination processes operate asynchronusly 
+	- pending messages - sent but not received messages 
+	- each pending message has several attributes and the destination process can use the attributes to determine which message to receive
+- communicator! 
+	- specifies a group of processes to which both souce and detination belong 
+- to receive a message, a process specifies a message envelope that MPI compares to the envelopes of pending messages
+
+## Blocking send and receive 
+- Both functions MPI_Send and MPI_Recv block the calling process until the communication operation is completed 
+	- creates the posibility of deadlock 
